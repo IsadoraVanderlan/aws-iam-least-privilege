@@ -41,6 +41,7 @@ Resources:
             Action:
               - 's3:GetObject'
             Resource: !Sub '${LabS3Bucket.Arn}/*'
+
   EC2MonitoringRole:
     Type: 'AWS::IAM::Role'
     Properties:
@@ -63,3 +64,25 @@ Resources:
       InstanceProfileName: 'instance-profile-lab-ec2-monitoring'
       Roles:
         - !Ref EC2MonitoringRole
+
+  MfaEnforcementPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: 'policy-mfa-enforcement'
+      Users:
+        - !Ref AdminUser
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: 'DenyAllExceptMFASetupIfNoMFA'
+            Effect: 'Deny'
+            NotAction:
+              - 'iam:CreateVirtualMFADevice'
+              - 'iam:EnableMFADevice'
+              - 'iam:ListVirtualMFADevices'
+              - 'iam:ListMFADevices'
+              - 'iam:ListUsers'
+            Resource: '*'
+            Condition:
+              Bool:
+                'aws:MultiFactorAuthPresent': 'false'
