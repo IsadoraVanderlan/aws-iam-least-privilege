@@ -59,5 +59,5 @@ _Fique à vontade para olhar o histórico de commits deste repositório e ver co
 
 ## ✉️ Contato e Conexões
 
-- **LinkedIn**: [Seu Nome Completo](https://linkedin.com)
-- **E-mail**: seu.email@exemplo.com
+- **LinkedIn**: [Seu Nome Completo](https://www.linkedin.com/in/isadoravanderlan/)
+- **E-mail**: vanderlansantos@gmail.com
