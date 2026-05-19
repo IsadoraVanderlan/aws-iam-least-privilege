@@ -2,3 +2,14 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: 'Meu Laboratorio de IAM Least Privilege'
 
 Resources:
+  AdminUser:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: 'usr-lab-admin'
+
+  ReadOnlyUser:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: 'usr-lab-auditor'
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/ReadOnlyAccess'
