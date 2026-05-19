@@ -59,5 +59,5 @@ _Fique à vontade para olhar o histórico de commits deste repositório e ver co
 
 ## ✉️ Contato e Conexões
 
-- **LinkedIn**: Isadora Vanderlan (https://www.linkedin.com/in/isadoravanderlan/)
+- **LinkedIn**: https://www.linkedin.com/in/isadoravanderlan/
 - **E-mail**: vanderlansantos@gmail.com
