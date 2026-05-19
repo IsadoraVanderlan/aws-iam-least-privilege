@@ -13,3 +13,13 @@ Resources:
       UserName: 'usr-lab-auditor'
       ManagedPolicyArns:
         - 'arn:aws:iam::aws:policy/ReadOnlyAccess'
+
+  LabS3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Sub 'lab-least-privilege-data-${AWS::AccountId}'
+
+  S3OperatorUser:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: 'usr-lab-s3-operator'
