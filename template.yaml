@@ -41,3 +41,25 @@ Resources:
             Action:
               - 's3:GetObject'
             Resource: !Sub '${LabS3Bucket.Arn}/*'
+  EC2MonitoringRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: 'role-lab-ec2-monitoring'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: 'Allow'
+            Principal:
+              Service:
+                - '://amazonaws.com'
+            Action:
+              - 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy'
+
+  EC2InstanceProfile:
+    Type: 'AWS::IAM::InstanceProfile'
+    Properties:
+      InstanceProfileName: 'instance-profile-lab-ec2-monitoring'
+      Roles:
+        - !Ref EC2MonitoringRole
