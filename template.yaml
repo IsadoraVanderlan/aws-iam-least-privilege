@@ -23,3 +23,21 @@ Resources:
     Type: 'AWS::IAM::User'
     Properties:
       UserName: 'usr-lab-s3-operator'
+
+  S3RestrictedPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: 'policy-s3-restricted-operator'
+      Users:
+        - !Ref S3OperatorUser
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: 'Allow'
+            Action:
+              - 's3:ListBucket'
+            Resource: !GetAtt LabS3Bucket.Arn
+          - Effect: 'Allow'
+            Action:
+              - 's3:GetObject'
+            Resource: !Sub '${LabS3Bucket.Arn}/*'
