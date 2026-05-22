@@ -1,6 +1,5 @@
 # Meu Laboratório Pessoal: AWS IAM Least Privilege 🛡️
 
-<p>&nbsp;</p>
 Olá! Este projeto é o resultado prático dos meus estudos focados em Cloud Computing.
 
 Estudando na **Escola da Nuvem**, aprendi os conceitos fundamentais de nuvem e arquitetura, decidi criar este laboratório pessoal para colocar a mão na massa.
