@@ -1,4 +1,4 @@
-# Meu Laboratório Pessoal: AWS IAM Least Privilege 🛡️
+# 🔐 Segurança e Governança Cloud: Desenvolvimento de Arquitetura de IAM na AWS
 
 Olá! Este projeto é o resultado prático dos meus estudos focados em Cloud Computing.
 
